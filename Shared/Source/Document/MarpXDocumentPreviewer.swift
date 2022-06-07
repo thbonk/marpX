@@ -40,10 +40,7 @@ class MarpXDocumentPreviewer {
   }
 
   deinit {
-    marpProcess?.terminate()
-    marpProcess = nil
-    loggerTask?.cancel()
-    loggerTask = nil
+    stopPreviewer()
 
     do {
       try temporaryMarpXFileUrl.deleteDirectory()
@@ -75,6 +72,7 @@ class MarpXDocumentPreviewer {
     marpProcess?.standardOutput = pipe
     marpProcess?.standardError = pipe
     marpProcess?.arguments = [
+      "--bespoke.progress",
       "-w",
       "-o",
       self.temporaryHtmlFileUrl.fileURL.path,
@@ -94,6 +92,17 @@ class MarpXDocumentPreviewer {
         }
       }
     }
+  }
+
+  public func stopPreviewer() {
+    guard isRunning else {
+      return
+    }
+
+    marpProcess?.terminate()
+    marpProcess = nil
+    loggerTask?.cancel()
+    loggerTask = nil
   }
 
   public func saveTemporary(text: String) {

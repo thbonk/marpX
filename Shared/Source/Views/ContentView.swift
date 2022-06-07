@@ -29,7 +29,6 @@ struct ContentView: View {
     VStack {
       if presentationVisible {
         WebView(url: document.previewUrl!)
-          .keyboardShortcut(<#T##key: KeyEquivalent##KeyEquivalent#>)
       } else if previewVisible {
         GeometryReader { geo in
           ZStack {

@@ -41,7 +41,7 @@ struct StatusBar: View {
       Spacer()
       
       Button {
-        previewVisible = !previewVisible
+        togglePreview()
       } label: {
         Image(systemName: previewVisible ? "tv.fill" : "tv")
       }
@@ -52,7 +52,7 @@ struct StatusBar: View {
       Text("|")
       
       Button {
-        presentationVisible = !presentationVisible
+        togglePresentationMode()
       } label: {
         Image(systemName: presentationVisible ? "play.tv.fill" : "play.tv")
       }
@@ -97,5 +97,27 @@ struct StatusBar: View {
     }
     
     return (x: 1, y: 1)
+  }
+
+
+  // MARK: - Private Methods
+
+  private func togglePreview() {
+    previewVisible = !previewVisible
+    if previewVisible {
+      try? document.startPreviewer()
+    } else {
+      document.stopPreviewer()
+    }
+  }
+
+  private func togglePresentationMode() {
+    presentationVisible = !presentationVisible
+
+    if presentationVisible {
+      try? document.startPreviewer()
+    } else if !previewVisible {
+      document.stopPreviewer()
+    }
   }
 }

@@ -61,7 +61,6 @@ struct MarpXDocument: FileDocument {
     do {
       self.previewer = try MarpXDocumentPreviewer(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
       self.previewer?.saveTemporary(text: self.text)
-      try self.previewer?.startPreviewer()
     } catch {
       NSLog("MarpXDocument: Error while creating previewer; preview not available.")
       // TODO: Show error toast
@@ -83,7 +82,6 @@ struct MarpXDocument: FileDocument {
     do {
       self.previewer = try MarpXDocumentPreviewer(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
       self.previewer?.saveTemporary(text: self.text)
-      try self.previewer?.startPreviewer()
     } catch {
       NSLog("MarpXDocument: Error while creating previewer; preview not available.")
       // TODO: Show error toast
@@ -93,5 +91,16 @@ struct MarpXDocument: FileDocument {
   func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
     let data = text.data(using: .utf8)!
     return .init(regularFileWithContents: data)
+  }
+
+
+  // MARK: - Public Methods
+
+  public func startPreviewer() throws {
+    try self.previewer?.startPreviewer()
+  }
+
+  public func stopPreviewer() {
+    self.previewer?.stopPreviewer()
   }
 }
