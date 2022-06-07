@@ -39,7 +39,9 @@ struct MarpXDocument: FileDocument {
   
   var text: String {
     didSet {
-      self.previewer?.saveTemporary(text: text)
+      if text != oldValue {
+        self.previewer?.saveTemporary(text: text)
+      }
     }
   }
 

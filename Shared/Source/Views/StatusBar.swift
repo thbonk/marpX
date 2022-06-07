@@ -48,17 +48,8 @@ struct StatusBar: View {
       .help("Toggle Preview")
       .keyboardShortcut("p", modifiers: .command)
       .buttonStyle(.plain)
-      
-      /*
+
       Text("|")
-      
-      Button {
-        speakerNotesVisible = !speakerNotesVisible
-      } label: {
-        Image(systemName: speakerNotesVisible ? "note.text" : "note")
-      }
-      .help("Show Speaker Notes")
-      .buttonStyle(.plain)
       
       Button {
         presentationVisible = !presentationVisible
@@ -67,7 +58,6 @@ struct StatusBar: View {
       }
       .help("Show Presentation")
       .buttonStyle(.plain)
-       */
     }
     .padding([.leading, .trailing], 10)
     .padding(.bottom, 5)

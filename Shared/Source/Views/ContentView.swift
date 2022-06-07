@@ -27,7 +27,10 @@ struct ContentView: View {
 
   var body: some View {
     VStack {
-      if previewVisible {
+      if presentationVisible {
+        WebView(url: document.previewUrl!)
+          .keyboardShortcut(<#T##key: KeyEquivalent##KeyEquivalent#>)
+      } else if previewVisible {
         GeometryReader { geo in
           ZStack {
             editor()
@@ -71,7 +74,7 @@ struct ContentView: View {
   private var presentationVisible: Bool = false
   
   @State
-  private var previewSize = CGSize(width: 320, height: 240)
+  private var previewSize = CGSize(width: 480, height: 360)
 
   @State
   private var messages: Set<Located<Message>> = []

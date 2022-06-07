@@ -28,15 +28,17 @@ struct PreviewView: View {
     Group {
       if url == nil {
         Text("No Preview URL available!")
+          .zIndex(0)
       } else {
         WebView(url: url!)
+          .zIndex(0)
       }
     }
     .frame(width: size.width, height: size.height)
     .background(.white)
     .foregroundColor(.black)
   }
-
+  
   var url: URL?
   
   @Binding
