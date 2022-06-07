@@ -31,7 +31,7 @@ struct ContentView: View {
         GeometryReader { geo in
           ZStack {
             editor()
-            PreviewView(url: document.previewUrl ,size: $previewSize)
+            PreviewView(url: document.previewUrl, size: $previewSize)
               .position(x: geo.size.width - previewSize.width / 2, y: geo.size.height - previewSize.height / 2)
           }
         }
@@ -87,7 +87,7 @@ struct ContentView: View {
     nestedComment: (open: "<!--", close: "-->"),
     identifierRegexp: nil,
     reservedIdentifiers: [
-      "---", "marp", "title", "description", "author", "keywords", "url", "image", "theme", "paginate",
+      "---", "marp", "title", "description", "author", "keywords", "size", "url", "image", "theme", "paginate",
       "backgroundColor", "backgroundImage", "backgroundPosition", "backgroundrepeat", "backgroundSize",
       "color", "style", "header", "footer", "class", "w", "h", "width", "height",
       "blur", "brightness", "contrast", "drop-shadow", "grayscale", "hue-rotate", "invert", "opacity", "saturate",
@@ -106,11 +106,5 @@ struct ContentView: View {
       language: marpLanguage,
       layout: CodeEditor.LayoutConfiguration(showMinimap: sourceMapVisible))
     .environment(\.codeEditorTheme, colorScheme == .dark ? Theme.defaultDark : Theme.defaultLight)
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView(document: .constant(MarpXDocument()))
   }
 }

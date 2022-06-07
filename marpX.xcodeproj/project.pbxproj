@@ -20,7 +20,6 @@
 		E90EBC79284952F8007772B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* ContentView.swift */; };
 		E90EBC7A284952F8007772B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* ContentView.swift */; };
 		E90EBC8528495743007772B8 /* CodeEditorView in Frameworks */ = {isa = PBXBuildFile; productRef = E90EBC8428495743007772B8 /* CodeEditorView */; };
-		E90EBC8F284AB22A007772B8 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = E90EBC8E284AB22A007772B8 /* SwiftShell */; };
 		E9C6240B284F0ED7006326E7 /* TemporaryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */; };
 		E9C6240D284F1060006326E7 /* MarpXDocumentPreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240C284F1060006326E7 /* MarpXDocumentPreviewer.swift */; };
 		E9C6240F284F5E8E006326E7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240E284F5E8E006326E7 /* WebView.swift */; };
@@ -71,7 +70,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90EBC8528495743007772B8 /* CodeEditorView in Frameworks */,
-				E90EBC8F284AB22A007772B8 /* SwiftShell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +216,6 @@
 			name = "marpX (macOS)";
 			packageProductDependencies = (
 				E90EBC8428495743007772B8 /* CodeEditorView */,
-				E90EBC8E284AB22A007772B8 /* SwiftShell */,
 			);
 			productName = "marpX (macOS)";
 			productReference = E90EBC5A2849527D007772B8 /* marpX.app */;
@@ -253,7 +250,6 @@
 			mainGroup = E90EBC442849527A007772B8;
 			packageReferences = (
 				E90EBC8328495743007772B8 /* XCRemoteSwiftPackageReference "CodeEditorView" */,
-				E90EBC8D284AB22A007772B8 /* XCRemoteSwiftPackageReference "SwiftShell" */,
 			);
 			productRefGroup = E90EBC532849527D007772B8 /* Products */;
 			projectDirPath = "";
@@ -590,14 +586,6 @@
 				kind = branch;
 			};
 		};
-		E90EBC8D284AB22A007772B8 /* XCRemoteSwiftPackageReference "SwiftShell" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kareman/SwiftShell";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -605,11 +593,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E90EBC8328495743007772B8 /* XCRemoteSwiftPackageReference "CodeEditorView" */;
 			productName = CodeEditorView;
-		};
-		E90EBC8E284AB22A007772B8 /* SwiftShell */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E90EBC8D284AB22A007772B8 /* XCRemoteSwiftPackageReference "SwiftShell" */;
-			productName = SwiftShell;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
