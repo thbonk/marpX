@@ -18,7 +18,6 @@
 //  limitations under the License.
 //
 
-import SwiftShell
 import SwiftUI
 import UniformTypeIdentifiers
 

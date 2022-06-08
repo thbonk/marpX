@@ -28,12 +28,12 @@ struct ContentView: View {
   var body: some View {
     VStack {
       if presentationVisible {
-        WebView(url: document.previewUrl!)
+        WebView(url: document.previewUrl!, slide: document.slideNumber(for: position.cursor))
       } else if previewVisible {
         GeometryReader { geo in
           ZStack {
             editor()
-            PreviewView(url: document.previewUrl, size: $previewSize)
+            PreviewView(url: document.previewUrl, slide: document.slideNumber(for: position.cursor), size: $previewSize)
               .position(x: geo.size.width - previewSize.width / 2, y: geo.size.height - previewSize.height / 2)
           }
         }

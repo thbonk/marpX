@@ -24,13 +24,16 @@ import WebKit
 struct WebView: NSViewRepresentable {
 
   var url: URL
+  var slide: Int
 
   func makeNSView(context: Context) -> WKWebView {
     return WKWebView()
   }
 
   func updateNSView(_ webView: WKWebView, context: Context) {
-    let request = URLRequest(url: url)
+    let navUrlString = url.description.appending("#\(slide)")
+    let navUrl = URL(string: navUrlString)!
+    let request = URLRequest(url: navUrl)
     webView.load(request)
   }
 }

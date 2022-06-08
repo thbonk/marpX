@@ -30,7 +30,7 @@ struct PreviewView: View {
         Text("No Preview URL available!")
           .zIndex(0)
       } else {
-        WebView(url: url!)
+        WebView(url: url!, slide: slide)
           .zIndex(0)
       }
     }
@@ -38,18 +38,19 @@ struct PreviewView: View {
     .background(.white)
     .foregroundColor(.black)
   }
-  
+
   var url: URL?
-  
+  var slide: Int
+
   @Binding
   var size: CGSize
-  
-  
+
+
   // MARK: - Private Properties
-  
+
   @State
   private var width: CGFloat = 320
-  
+
   @State
   private var height: CGFloat = 240
 }
