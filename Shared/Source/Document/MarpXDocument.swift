@@ -103,4 +103,49 @@ struct MarpXDocument: FileDocument {
   public func stopPreviewer() {
     self.previewer?.stopPreviewer()
   }
+
+  public func slideNumber(for position: NSRange?) -> Int {
+    // ALERTA: This method needs optimization!!
+
+    if let pos = position {
+      let cursorPosition = cursorPosition(for: pos, in: self)
+      var lines = text.components(separatedBy: "\n")
+      let firstSlideLine = firstSlideLine(lines)
+
+      if cursorPosition.y < firstSlideLine {
+        return 1
+      }
+
+      lines.removeFirst(firstSlideLine)
+
+      var slideNum: Int = 0
+
+      if cursorPosition.y - firstSlideLine - 1 > 0 {
+        for n in 0...(cursorPosition.y - firstSlideLine - 1) {
+          if n < lines.count {
+            if lines[n].starts(with: "---") {
+              slideNum += 1
+            }
+          }
+        }
+      }
+
+      return slideNum == 0 ? 1 : slideNum
+    }
+
+    return 1
+  }
+
+  private func firstSlideLine(_ lines: [String]) -> Int {
+    var firstSlideLine: Int = 0
+
+    for i in 0..<lines.count {
+      if lines[i].starts(with: "marpX>:") && i < (lines.count - 1) && lines[i + 1].starts(with: "---") {
+        firstSlideLine = i + 1
+        break
+      }
+    }
+
+    return firstSlideLine
+  }
 }

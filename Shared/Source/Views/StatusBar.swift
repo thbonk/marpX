@@ -27,7 +27,12 @@ struct StatusBar: View {
   
   var body: some View {
     HStack {
-      Text("Line: \(cursorPosition.y) | Column: \(cursorPosition.x)")
+      Text(
+        String(format: "Line: %4u | Column: %4u",
+               cursorPosition(for: position, in: document).y,
+               cursorPosition(for: position, in: document).x))
+      Text("|")
+      Text(String(format: "Slide: %4u", document.slideNumber(for: position.cursor)))
       Text("|")
       Button {
         sourceMapVisible = !sourceMapVisible
@@ -81,23 +86,6 @@ struct StatusBar: View {
   
   @Binding
   var presentationVisible: Bool
-  
-  
-  // MARK: - Private Properties
-  
-  private var cursorPosition: (x: Int, y: Int) {
-    if let rng = position.selections.first(where: { $0.length == 0 }) {
-      let index = document.text.index(document.text.startIndex, offsetBy: rng.location)
-      let textBeforeCursor = document.text.endIndex < index ? document.text[...index] : document.text[..<index]
-      let y = textBeforeCursor.reduce(0, { $1 == "\n" ? $0 + 1 : $0 }) + 1
-      let lastLine = textBeforeCursor.components(separatedBy: "\n").last
-      let x = (lastLine?.count ?? 0) + 1
-      
-      return (x: x, y: y)
-    }
-    
-    return (x: 1, y: 1)
-  }
 
 
   // MARK: - Private Methods

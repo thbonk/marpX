@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Shared
+//  marpX
 //
 //  Created by Thomas Bonk on 02.06.22.
 //  Copyright 2022 Thomas Bonk <thomas@meandmymac.de>
@@ -61,7 +61,7 @@ struct ContentView: View {
   private var position = CodeEditor.Position()
   
   @State
-  private var sourceMapVisible: Bool = true
+  private var sourceMapVisible: Bool = false
   
   @State
   private var previewVisible: Bool = false

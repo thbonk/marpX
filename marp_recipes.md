@@ -85,7 +85,6 @@ npx @marp-team/marp-cli your.md --pptx
 
 ---
 
-
 ## scientific $\LaTeX$ stuff
 
 inline math delimiters `$` as used in `$\alpha = \arcsin\left({s}\right)$` will render within a sentence as $\alpha = \arcsin\left({s}\right)$. A separated math block employs `$$` delimiters and yields
