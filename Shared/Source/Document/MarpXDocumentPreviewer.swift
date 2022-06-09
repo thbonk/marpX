@@ -33,7 +33,7 @@ class MarpXDocumentPreviewer {
   init(marpExecutableUrl url: URL) throws {
     marpExecutableUrl = url
     temporaryMarpXFileUrl = try TemporaryFile(creatingTempDirectoryForFilename: UUID().uuidString + ".md")
-    temporaryHtmlFileUrl = try TemporaryFile(creatingTempDirectoryForFilename: UUID().uuidString + ".html")
+    temporaryHtmlFileUrl = try TemporaryFile(creatingTempDirectoryForFilename: UUID().uuidString + ".marpx.html")
 
     NSLog("Temporary Marp file: \(self.temporaryMarpXFileUrl.fileURL.path)")
     NSLog("Temporary HTML file: \(self.temporaryHtmlFileUrl.fileURL.path)")
@@ -72,7 +72,7 @@ class MarpXDocumentPreviewer {
     marpProcess?.standardOutput = pipe
     marpProcess?.standardError = pipe
     marpProcess?.arguments = [
-      "--bespoke.progress",
+      "--bespoke.transition",
       "-w",
       "-o",
       self.temporaryHtmlFileUrl.fileURL.path,
