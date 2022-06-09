@@ -21,7 +21,7 @@
 		E90EBC7A284952F8007772B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* ContentView.swift */; };
 		E90EBC8528495743007772B8 /* CodeEditorView in Frameworks */ = {isa = PBXBuildFile; productRef = E90EBC8428495743007772B8 /* CodeEditorView */; };
 		E9C6240B284F0ED7006326E7 /* TemporaryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */; };
-		E9C6240D284F1060006326E7 /* MarpXDocumentPreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240C284F1060006326E7 /* MarpXDocumentPreviewer.swift */; };
+		E9C6240D284F1060006326E7 /* MarpXPreviewDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */; };
 		E9C6240F284F5E8E006326E7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240E284F5E8E006326E7 /* WebView.swift */; };
 		E9C624112850638A006326E7 /* CursorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C624102850638A006326E7 /* CursorPosition.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		E90EBC8128495503007772B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E90EBC8228495542007772B8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryFile.swift; sourceTree = "<group>"; };
-		E9C6240C284F1060006326E7 /* MarpXDocumentPreviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarpXDocumentPreviewer.swift; sourceTree = "<group>"; };
+		E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarpXPreviewDocument.swift; sourceTree = "<group>"; };
 		E9C6240E284F5E8E006326E7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		E9C624102850638A006326E7 /* CursorPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorPosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				E90EBC70284952F8007772B8 /* MarpXDocument.swift */,
-				E9C6240C284F1060006326E7 /* MarpXDocumentPreviewer.swift */,
+				E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 			files = (
 				B3D9D802284A2B6F00A1D14B /* PreviewView.swift in Sources */,
 				E9C6240F284F5E8E006326E7 /* WebView.swift in Sources */,
-				E9C6240D284F1060006326E7 /* MarpXDocumentPreviewer.swift in Sources */,
+				E9C6240D284F1060006326E7 /* MarpXPreviewDocument.swift in Sources */,
 				E9C6240B284F0ED7006326E7 /* TemporaryFile.swift in Sources */,
 				E90EBC78284952F8007772B8 /* MarpXApp.swift in Sources */,
 				E9C624112850638A006326E7 /* CursorPosition.swift in Sources */,

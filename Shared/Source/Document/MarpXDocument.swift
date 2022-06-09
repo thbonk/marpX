@@ -49,7 +49,7 @@ struct MarpXDocument: FileDocument {
 
   // MARK: - Private Properties
 
-  private var previewer: MarpXDocumentPreviewer?
+  private var previewer: MarpXPreviewDocument?
   
   
   // MARK: - Initialization
@@ -58,7 +58,7 @@ struct MarpXDocument: FileDocument {
     self.text = text
 
     do {
-      self.previewer = try MarpXDocumentPreviewer(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
+      self.previewer = try MarpXPreviewDocument(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
       self.previewer?.saveTemporary(text: self.text)
     } catch {
       NSLog("MarpXDocument: Error while creating previewer; preview not available.")
@@ -79,7 +79,7 @@ struct MarpXDocument: FileDocument {
     text = string
 
     do {
-      self.previewer = try MarpXDocumentPreviewer(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
+      self.previewer = try MarpXPreviewDocument(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
       self.previewer?.saveTemporary(text: self.text)
     } catch {
       NSLog("MarpXDocument: Error while creating previewer; preview not available.")

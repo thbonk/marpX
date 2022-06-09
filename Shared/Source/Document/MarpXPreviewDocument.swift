@@ -20,7 +20,7 @@
 
 import Foundation
 
-class MarpXDocumentPreviewer {
+class MarpXPreviewDocument {
 
   // MARK: - Public Properties
 
