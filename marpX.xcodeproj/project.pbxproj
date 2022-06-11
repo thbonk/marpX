@@ -24,6 +24,7 @@
 		E9C6240D284F1060006326E7 /* MarpXPreviewDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */; };
 		E9C6240F284F5E8E006326E7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240E284F5E8E006326E7 /* WebView.swift */; };
 		E9C624112850638A006326E7 /* CursorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C624102850638A006326E7 /* CursorPosition.swift */; };
+		E9C624162854D408006326E7 /* Marp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C624152854D408006326E7 /* Marp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarpXPreviewDocument.swift; sourceTree = "<group>"; };
 		E9C6240E284F5E8E006326E7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		E9C624102850638A006326E7 /* CursorPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorPosition.swift; sourceTree = "<group>"; };
+		E9C624152854D408006326E7 /* Marp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */,
 				E9C624102850638A006326E7 /* CursorPosition.swift */,
+				E9C624152854D408006326E7 /* Marp.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				E90EBC76284952F8007772B8 /* MarpXDocument.swift in Sources */,
 				E90EBC7A284952F8007772B8 /* DocumentView.swift in Sources */,
 				B39734DA284A04AF000EE0C4 /* StatusBar.swift in Sources */,
+				E9C624162854D408006326E7 /* Marp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -504,7 +508,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -534,7 +538,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

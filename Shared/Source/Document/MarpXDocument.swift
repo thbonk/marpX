@@ -95,6 +95,14 @@ struct MarpXDocument: FileDocument {
 
   // MARK: - Public Methods
 
+  public func exportPPTX(url: URL) {
+    Marp.export(document: self, toPptx: url)
+  }
+
+  public func exportPDF(url: URL) {
+    Marp.export(document: self, toPdf: url)
+  }
+
   public func startPreviewer() throws {
     try self.previewer?.startPreviewer()
   }
