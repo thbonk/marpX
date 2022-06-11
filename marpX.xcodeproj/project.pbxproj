@@ -17,13 +17,14 @@
 		E90EBC76284952F8007772B8 /* MarpXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC70284952F8007772B8 /* MarpXDocument.swift */; };
 		E90EBC77284952F8007772B8 /* MarpXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC72284952F8007772B8 /* MarpXApp.swift */; };
 		E90EBC78284952F8007772B8 /* MarpXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC72284952F8007772B8 /* MarpXApp.swift */; };
-		E90EBC79284952F8007772B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* ContentView.swift */; };
-		E90EBC7A284952F8007772B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* ContentView.swift */; };
+		E90EBC79284952F8007772B8 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* DocumentView.swift */; };
+		E90EBC7A284952F8007772B8 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* DocumentView.swift */; };
 		E90EBC8528495743007772B8 /* CodeEditorView in Frameworks */ = {isa = PBXBuildFile; productRef = E90EBC8428495743007772B8 /* CodeEditorView */; };
 		E9C6240B284F0ED7006326E7 /* TemporaryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */; };
 		E9C6240D284F1060006326E7 /* MarpXPreviewDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */; };
 		E9C6240F284F5E8E006326E7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240E284F5E8E006326E7 /* WebView.swift */; };
 		E9C624112850638A006326E7 /* CursorPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C624102850638A006326E7 /* CursorPosition.swift */; };
+		E9C624162854D408006326E7 /* Marp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C624152854D408006326E7 /* Marp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,13 +51,14 @@
 		E90EBC5D2849527D007772B8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E90EBC70284952F8007772B8 /* MarpXDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarpXDocument.swift; sourceTree = "<group>"; };
 		E90EBC72284952F8007772B8 /* MarpXApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarpXApp.swift; sourceTree = "<group>"; };
-		E90EBC74284952F8007772B8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E90EBC74284952F8007772B8 /* DocumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		E90EBC8128495503007772B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E90EBC8228495542007772B8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryFile.swift; sourceTree = "<group>"; };
 		E9C6240C284F1060006326E7 /* MarpXPreviewDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarpXPreviewDocument.swift; sourceTree = "<group>"; };
 		E9C6240E284F5E8E006326E7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		E9C624102850638A006326E7 /* CursorPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorPosition.swift; sourceTree = "<group>"; };
+		E9C624152854D408006326E7 /* Marp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +159,7 @@
 		E90EBC73284952F8007772B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E90EBC74284952F8007772B8 /* ContentView.swift */,
+				E90EBC74284952F8007772B8 /* DocumentView.swift */,
 				B3D9D800284A2B6F00A1D14B /* PreviewView.swift */,
 				B39734D8284A04AF000EE0C4 /* StatusBar.swift */,
 				E9C6240E284F5E8E006326E7 /* WebView.swift */,
@@ -177,6 +179,7 @@
 			children = (
 				E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */,
 				E9C624102850638A006326E7 /* CursorPosition.swift */,
+				E9C624152854D408006326E7 /* Marp.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -291,7 +294,7 @@
 				B3D9D801284A2B6F00A1D14B /* PreviewView.swift in Sources */,
 				E90EBC77284952F8007772B8 /* MarpXApp.swift in Sources */,
 				E90EBC75284952F8007772B8 /* MarpXDocument.swift in Sources */,
-				E90EBC79284952F8007772B8 /* ContentView.swift in Sources */,
+				E90EBC79284952F8007772B8 /* DocumentView.swift in Sources */,
 				B39734D9284A04AF000EE0C4 /* StatusBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,8 +310,9 @@
 				E90EBC78284952F8007772B8 /* MarpXApp.swift in Sources */,
 				E9C624112850638A006326E7 /* CursorPosition.swift in Sources */,
 				E90EBC76284952F8007772B8 /* MarpXDocument.swift in Sources */,
-				E90EBC7A284952F8007772B8 /* ContentView.swift in Sources */,
+				E90EBC7A284952F8007772B8 /* DocumentView.swift in Sources */,
 				B39734DA284A04AF000EE0C4 /* StatusBar.swift in Sources */,
+				E9C624162854D408006326E7 /* Marp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -504,7 +508,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -534,7 +538,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = GQE994U6EG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+import Combine
 import SwiftUI
 
 @main
@@ -27,7 +28,77 @@ struct MarpXApp: App {
   
   var body: some Scene {
     DocumentGroup(newDocument: MarpXDocument()) { file in
-      ContentView(document: file.$document)
+      DocumentView(document: file.$document)
+        .focusedSceneValue(\.marpDocument, file.$document)
+    }.commands {
+      CommandGroup(after: CommandGroupPlacement.saveItem) {
+        Divider()
+        Button("Export to PowerPoint (pptx)...") {
+          if let doc = marpDocument {
+            export(
+              title: "Export to PowerPoint",
+              message: "Export this presentation to PowerPoint (pptx)",
+              pathExtension: "pptx",
+              action: doc.exportPPTX(url:))
+          }
+        }
+        .disabled(!marpDocumentSelected)
+        .onAppear {
+          marpDocumentSelected = (marpDocument != nil)
+        }
+        Button("Export to PDF...") {
+          if let doc = marpDocument {
+            export(
+              title: "Export to PDF",
+              message: "Export this presentation to PDF",
+              pathExtension: "pdf",
+              action: doc.exportPDF(url:))
+          }
+        }
+        .disabled(!marpDocumentSelected)
+        .onAppear {
+          marpDocumentSelected = (marpDocument != nil)
+        }
+      }
+    }
+  }
+
+  @FocusedBinding(\.marpDocument)
+  var marpDocument: MarpXDocument?
+
+  @State
+  var marpDocumentSelected: Bool = false
+
+
+  // MARK: - Private Methods
+
+  private func export(title: String, message: String, pathExtension: String, action: (URL) -> ()) {
+    let savePanel = NSSavePanel()
+    savePanel.title = title
+    savePanel.message = message
+    savePanel.allowsOtherFileTypes = false
+
+    savePanel.canCreateDirectories = true
+    let response = savePanel.runModal()
+
+    if response == .OK, let url = savePanel.url {
+      action(url.appendingPathExtension(pathExtension))
+    }
+  }
+}
+
+struct MarpDocumentFocusedValueKey: FocusedValueKey {
+  typealias Value = Binding<MarpXDocument>
+}
+
+extension FocusedValues {
+  var marpDocument: MarpDocumentFocusedValueKey.Value? {
+    get {
+      return self[MarpDocumentFocusedValueKey.self]
+    }
+
+    set {
+      self[MarpDocumentFocusedValueKey.self] = newValue
     }
   }
 }
