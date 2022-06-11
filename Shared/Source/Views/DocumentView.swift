@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DocumentView.swift
 //  marpX
 //
 //  Created by Thomas Bonk on 02.06.22.
@@ -21,7 +21,7 @@
 import CodeEditorView
 import SwiftUI
 
-struct ContentView: View {
+struct DocumentView: View {
 
   // MARK: - Public Properties
 

@@ -1,5 +1,5 @@
 //
-//  MarpXDocumentPreviewer.swift
+//  MarpXPreviewDocument.swift
 //  marpX (macOS)
 //
 //  Created by Thomas Bonk on 07.06.22.

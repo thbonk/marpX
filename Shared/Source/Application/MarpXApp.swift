@@ -27,7 +27,7 @@ struct MarpXApp: App {
   
   var body: some Scene {
     DocumentGroup(newDocument: MarpXDocument()) { file in
-      ContentView(document: file.$document)
+      DocumentView(document: file.$document)
     }
   }
 }
