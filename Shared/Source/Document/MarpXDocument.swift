@@ -27,7 +27,7 @@ extension UTType {
   }
 }
 
-struct MarpXDocument: FileDocument {
+struct MarpXDocument: FileDocument, Hashable {
   
   // MARK: - Static Properties
   
@@ -62,7 +62,11 @@ struct MarpXDocument: FileDocument {
       self.previewer?.saveTemporary(text: self.text)
     } catch {
       NSLog("MarpXDocument: Error while creating previewer; preview not available.")
-      // TODO: Show error toast
+      Alert.warning(
+        message: "Error while creating preview document.\nPreview might not be visible",
+        document: self,
+        error: error)
+      .show()
     }
   }
   
@@ -77,19 +81,43 @@ struct MarpXDocument: FileDocument {
     }
 
     text = string
+    fileWrapperHash = configuration.file.hashValue
 
     do {
       self.previewer = try MarpXPreviewDocument(marpExecutableUrl: URL(fileURLWithPath: "/usr/local/bin/marp"))
       self.previewer?.saveTemporary(text: self.text)
     } catch {
       NSLog("MarpXDocument: Error while creating previewer; preview not available.")
-      // TODO: Show error toast
+      Alert.warning(
+        message: "Error while creating preview document.\nPreview might not be visible",
+        document: self,
+        error: error)
+      .show()
     }
   }
   
   func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
     let data = text.data(using: .utf8)!
-    return .init(regularFileWithContents: data)
+    let wrapper = FileWrapper(regularFileWithContents: data)
+
+    fileWrapperHash = wrapper.hashValue
+    
+    return wrapper
+  }
+
+
+  // MARK: - Hashable
+
+  @State
+  private var fileWrapperHash: Int = 0
+
+  static func == (lhs: MarpXDocument, rhs: MarpXDocument) -> Bool {
+    lhs.hashValue == rhs.hashValue
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(text)
+    hasher.combine(fileWrapperHash)
   }
 
 

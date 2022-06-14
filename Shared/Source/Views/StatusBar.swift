@@ -93,7 +93,15 @@ struct StatusBar: View {
   private func togglePreview() {
     previewVisible = !previewVisible
     if previewVisible {
-      try? document.startPreviewer()
+      do {
+        try document.startPreviewer()
+      } catch {
+        Alert.warning(
+          message: "Error while creating preview document.\nPreview might not be visible",
+          document: self.document,
+          error: error)
+        .show()
+      }
     } else {
       document.stopPreviewer()
     }
@@ -103,7 +111,15 @@ struct StatusBar: View {
     presentationVisible = !presentationVisible
 
     if presentationVisible {
-      try? document.startPreviewer()
+      do {
+        try document.startPreviewer()
+      } catch {
+        Alert.warning(
+          message: "Error while creating preview document.\nPreview might not be visible",
+          document: self.document,
+          error: error)
+        .show()
+      }
     } else if !previewVisible {
       document.stopPreviewer()
     }

@@ -111,6 +111,12 @@ class MarpXPreviewDocument {
         try text.write(to: self.temporaryMarpXFileUrl.fileURL, atomically: true, encoding: .utf8)
       } catch {
         NSLog("MarpXDocumentPreviewer: Error while writing temporary file")
+
+        Alert.error(
+          message: "Error while creating preview document.\nPreview might not be visible",
+          document: self,
+          error: error)
+        .show()
       }
     }
   }
