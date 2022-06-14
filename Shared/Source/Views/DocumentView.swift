@@ -19,6 +19,8 @@
 //
 
 import CodeEditorView
+import Combine
+import PopupView
 import SwiftUI
 
 struct DocumentView: View {
@@ -49,6 +51,12 @@ struct DocumentView: View {
         speakerNotesVisible: $speakerNotesVisible,
         presentationVisible: $presentationVisible)
     }
+    .onAppear(perform: registerForAlerts)
+    .onDisappear(perform: unregisterFromAlerts)
+    .popup(isPresented: $showAlert, type: .toast, dismissCallback: alert.dismissCallback) {
+      AlertView(alert: alert)
+        .background(Color(NSColor.controlBackgroundColor))
+    }
   }
 
   @Binding
@@ -77,6 +85,13 @@ struct DocumentView: View {
 
   @State
   private var messages: Set<Located<Message>> = []
+
+  @State
+  private var alertCancellable: AnyCancellable? = nil
+  @State
+  private var alert: Alert = Alert()
+  @State
+  private var showAlert: Bool = false
 
   @Environment(\.colorScheme)
   private var colorScheme: ColorScheme
@@ -108,5 +123,20 @@ struct DocumentView: View {
       language: marpLanguage,
       layout: CodeEditor.LayoutConfiguration(showMinimap: sourceMapVisible))
     .environment(\.codeEditorTheme, colorScheme == .dark ? Theme.defaultDark : Theme.defaultLight)
+  }
+
+  private func registerForAlerts() {
+    alertCancellable = NotificationCenter.default.publisher(for: Alert.NotificationName).sink { notification in
+      if let alert = (notification.object as? Alert) {
+        if alert.isAlert(forDocument: self.document) {
+          self.alert = alert
+          self.showAlert = true
+        }
+      }
+    }
+  }
+
+  private func unregisterFromAlerts() {
+    alertCancellable?.cancel()
   }
 }
