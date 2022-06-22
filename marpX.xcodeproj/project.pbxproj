@@ -7,17 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B39734D9284A04AF000EE0C4 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39734D8284A04AF000EE0C4 /* StatusBar.swift */; };
 		B39734DA284A04AF000EE0C4 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39734D8284A04AF000EE0C4 /* StatusBar.swift */; };
-		B3D9D801284A2B6F00A1D14B /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9D800284A2B6F00A1D14B /* PreviewView.swift */; };
 		B3D9D802284A2B6F00A1D14B /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9D800284A2B6F00A1D14B /* PreviewView.swift */; };
-		E90EBC642849527D007772B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90EBC4D2849527D007772B8 /* Assets.xcassets */; };
 		E90EBC652849527D007772B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90EBC4D2849527D007772B8 /* Assets.xcassets */; };
-		E90EBC75284952F8007772B8 /* MarpXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC70284952F8007772B8 /* MarpXDocument.swift */; };
 		E90EBC76284952F8007772B8 /* MarpXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC70284952F8007772B8 /* MarpXDocument.swift */; };
-		E90EBC77284952F8007772B8 /* MarpXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC72284952F8007772B8 /* MarpXApp.swift */; };
 		E90EBC78284952F8007772B8 /* MarpXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC72284952F8007772B8 /* MarpXApp.swift */; };
-		E90EBC79284952F8007772B8 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* DocumentView.swift */; };
 		E90EBC7A284952F8007772B8 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90EBC74284952F8007772B8 /* DocumentView.swift */; };
 		E90EBC8528495743007772B8 /* CodeEditorView in Frameworks */ = {isa = PBXBuildFile; productRef = E90EBC8428495743007772B8 /* CodeEditorView */; };
 		E9C6240B284F0ED7006326E7 /* TemporaryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6240A284F0ED7006326E7 /* TemporaryFile.swift */; };
@@ -47,8 +41,6 @@
 		B39734D8284A04AF000EE0C4 /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		B3D9D800284A2B6F00A1D14B /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		E90EBC4D2849527D007772B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E90EBC522849527D007772B8 /* marpX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marpX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E90EBC552849527D007772B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90EBC5A2849527D007772B8 /* marpX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marpX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90EBC5C2849527D007772B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E90EBC5D2849527D007772B8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -67,13 +59,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E90EBC4F2849527D007772B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E90EBC572849527D007772B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,7 +77,6 @@
 				E90EBC8228495542007772B8 /* LICENSE.md */,
 				E90EBC8128495503007772B8 /* README.md */,
 				E90EBC492849527A007772B8 /* Shared */,
-				E90EBC542849527D007772B8 /* iOS */,
 				E90EBC5B2849527D007772B8 /* macOS */,
 				E90EBC532849527D007772B8 /* Products */,
 				E90EBC7E284954EC007772B8 /* Frameworks */,
@@ -111,18 +95,9 @@
 		E90EBC532849527D007772B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E90EBC522849527D007772B8 /* marpX.app */,
 				E90EBC5A2849527D007772B8 /* marpX.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E90EBC542849527D007772B8 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E90EBC552849527D007772B8 /* Info.plist */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		E90EBC5B2849527D007772B8 /* macOS */ = {
@@ -203,25 +178,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E90EBC512849527D007772B8 /* marpX (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E90EBC682849527D007772B8 /* Build configuration list for PBXNativeTarget "marpX (iOS)" */;
-			buildPhases = (
-				E90EBC4E2849527D007772B8 /* Sources */,
-				E90EBC4F2849527D007772B8 /* Frameworks */,
-				E90EBC502849527D007772B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "marpX (iOS)";
-			packageProductDependencies = (
-			);
-			productName = "marpX (iOS)";
-			productReference = E90EBC522849527D007772B8 /* marpX.app */;
-			productType = "com.apple.product-type.application";
-		};
 		E90EBC592849527D007772B8 /* marpX (macOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E90EBC6B2849527D007772B8 /* Build configuration list for PBXNativeTarget "marpX (macOS)" */;
@@ -254,9 +210,6 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					E90EBC512849527D007772B8 = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
 					E90EBC592849527D007772B8 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -279,21 +232,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E90EBC512849527D007772B8 /* marpX (iOS) */,
 				E90EBC592849527D007772B8 /* marpX (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E90EBC502849527D007772B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E90EBC642849527D007772B8 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E90EBC582849527D007772B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,18 +249,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E90EBC4E2849527D007772B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3D9D801284A2B6F00A1D14B /* PreviewView.swift in Sources */,
-				E90EBC77284952F8007772B8 /* MarpXApp.swift in Sources */,
-				E90EBC75284952F8007772B8 /* MarpXDocument.swift in Sources */,
-				E90EBC79284952F8007772B8 /* DocumentView.swift in Sources */,
-				B39734D9284A04AF000EE0C4 /* StatusBar.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E90EBC562849527D007772B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,15 +519,6 @@
 			buildConfigurations = (
 				E90EBC662849527D007772B8 /* Debug */,
 				E90EBC672849527D007772B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E90EBC682849527D007772B8 /* Build configuration list for PBXNativeTarget "marpX (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E90EBC692849527D007772B8 /* Debug */,
-				E90EBC6A2849527D007772B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
