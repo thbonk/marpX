@@ -25,7 +25,7 @@ class MarpXPreviewDocument {
   // MARK: - Public Properties
 
   public var isRunning: Bool { marpProcess != nil && marpProcess!.isRunning }
-  public var previewUrl: URL { temporaryHtmlFileUrl.fileURL }
+  public var presentationUrl: URL?
 
 
   // MARK: - Initialization
@@ -33,10 +33,8 @@ class MarpXPreviewDocument {
   init(marpExecutableUrl url: URL) throws {
     marpExecutableUrl = url
     temporaryMarpXFileUrl = try TemporaryFile(creatingTempDirectoryForFilename: UUID().uuidString + ".md")
-    temporaryHtmlFileUrl = try TemporaryFile(creatingTempDirectoryForFilename: UUID().uuidString + ".marpx.html")
 
     NSLog("Temporary Marp file: \(self.temporaryMarpXFileUrl.fileURL.path)")
-    NSLog("Temporary HTML file: \(self.temporaryHtmlFileUrl.fileURL.path)")
   }
 
   deinit {
@@ -44,7 +42,6 @@ class MarpXPreviewDocument {
 
     do {
       try temporaryMarpXFileUrl.deleteDirectory()
-      try temporaryHtmlFileUrl.deleteDirectory()
     } catch {
       NSLog("MarpXDocumentPreviewer: Error while deleting temporary files")
     }
@@ -54,9 +51,9 @@ class MarpXPreviewDocument {
   private let saveQueue = DispatchQueue(label: UUID().uuidString, qos: .background)
   private var marpExecutableUrl: URL
   private var marpProcess: Process?
-  private var loggerTask: Task<Void, Error>?
+  private var loggerTask: Task<Void, Never>?
+  private var port: UInt16 = 0
   private var temporaryMarpXFileUrl: TemporaryFile
-  private var temporaryHtmlFileUrl: TemporaryFile
 
 
   // MARK: - Public Methods
@@ -66,32 +63,13 @@ class MarpXPreviewDocument {
       return
     }
 
-    marpProcess = Process()
-    let pipe = Pipe()
+    let result = try Marp.startServer(for: temporaryMarpXFileUrl.directoryURL)
+    marpProcess = result.process
+    loggerTask = result.loggerTask
+    port = result.port
 
-    marpProcess?.standardOutput = pipe
-    marpProcess?.standardError = pipe
-    marpProcess?.arguments = [
-      "--bespoke.transition",
-      "-w",
-      "-o",
-      self.temporaryHtmlFileUrl.fileURL.path,
-      self.temporaryMarpXFileUrl.fileURL.path
-    ]
-    marpProcess?.executableURL = marpExecutableUrl
-    marpProcess?.standardInput = nil
-
-    try marpProcess?.run()
-
-    loggerTask = Task {
-      while isRunning {
-        if let data = try? pipe.fileHandleForReading.readToEnd() {
-          let output = String(data: data, encoding: .utf8)!
-
-          NSLog("\(output)")
-        }
-      }
-    }
+    self.presentationUrl = URL(string: "http://localhost:\(port)/\(temporaryMarpXFileUrl.fileURL.lastPathComponent)")
+    NSLog("Presentation URL: \(String(describing: self.presentationUrl))")
   }
 
   public func stopPreviewer() {
@@ -103,6 +81,7 @@ class MarpXPreviewDocument {
     marpProcess = nil
     loggerTask?.cancel()
     loggerTask = nil
+    port = 0
   }
 
   public func saveTemporary(text: String) {

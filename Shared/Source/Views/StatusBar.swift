@@ -57,7 +57,7 @@ struct StatusBar: View {
       Text("|")
       
       Button {
-        togglePresentationMode()
+        togglePresentation()
       } label: {
         Image(systemName: presentationVisible ? "play.tv.fill" : "play.tv")
       }
@@ -102,15 +102,11 @@ struct StatusBar: View {
           error: error)
         .show()
       }
-    } else {
-      document.stopPreviewer()
     }
   }
 
-  private func togglePresentationMode() {
-    presentationVisible = !presentationVisible
-
-    if presentationVisible {
+  private func togglePresentation() {
+    if !presentationVisible {
       do {
         try document.startPreviewer()
       } catch {
@@ -120,8 +116,8 @@ struct StatusBar: View {
           error: error)
         .show()
       }
-    } else if !previewVisible {
-      document.stopPreviewer()
     }
+
+    presentationVisible = !presentationVisible
   }
 }

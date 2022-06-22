@@ -52,7 +52,7 @@ struct DocumentView: View {
         presentationVisible: $presentationVisible)
     }
     .onAppear(perform: registerForAlerts)
-    .onDisappear(perform: unregisterFromAlerts)
+    .onDisappear(perform: cleanup)
     .popup(isPresented: $showAlert, type: .toast, dismissCallback: alert.dismissCallback) {
       AlertView(alert: alert)
         .background(Color(NSColor.controlBackgroundColor))
@@ -136,7 +136,8 @@ struct DocumentView: View {
     }
   }
 
-  private func unregisterFromAlerts() {
+  private func cleanup() {
     alertCancellable?.cancel()
+    document.stopPreviewer()
   }
 }

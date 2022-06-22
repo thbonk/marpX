@@ -44,13 +44,13 @@ struct MarpXDocument: FileDocument, Hashable {
     }
   }
 
-  var previewUrl: URL? { self.previewer?.previewUrl }
+  var previewUrl: URL? { self.previewer?.presentationUrl }
 
 
   // MARK: - Private Properties
 
   private var previewer: MarpXPreviewDocument?
-  
+
   
   // MARK: - Initialization
   
